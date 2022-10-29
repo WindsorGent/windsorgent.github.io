@@ -1,0 +1,151 @@
+//Import Fonts
+@import url("https://use.typekit.net/itr5pyi.css");
+
+//Set Media Queries for Screen Size
+@mixin desktop {
+  @media screen and (min-width: 1000px) {
+    @content
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: 768px) {
+    @content
+  }
+}
+
+//Page Styling and Defaults
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: brandon-grotesque, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+  font-size: 1.2em;
+}
+
+//Header
+.main-menu {
+  background-color: #f5eaac;
+  display: none;
+  @include medium {
+    display: block;
+  }
+}
+
+.mob-menu {
+  background-color: #f8a447;
+  @include medium {
+    display: none;
+  }
+}
+
+header {
+  padding: 1em;
+  nav {
+    text-align: center;
+  }
+  ul {
+    margin: 0 auto;
+  }
+  ul li {
+    display: inline;
+    padding: 0 1em;
+    text-align: center;
+  }
+}
+
+//Main Page Section
+section.split {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  @include medium {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 750px;
+    margin: auto;
+    div {
+      width: 45%;
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  .heading {
+    position: absolute;
+    padding: 1em;
+    background-color: rgba;
+    margin-left: 10%;
+    top: 20%;
+  }
+}
+
+.picture img {
+  width: 100%;
+}
+
+.logo-block {
+  width: 50%;
+  height: 50%;
+  padding: 1em;
+  margin: auto;
+  @include medium {
+    padding: 2em;
+  }
+}
+
+.divider {
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, .45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0.09em;
+    min-width: 22vw;
+  }
+
+  &::before {
+    background: linear-gradient(to right, rgba(240,240,240,0), #626262);
+    margin-right: 1vh;
+  }
+
+  &::after {
+    background: linear-gradient(to left, rgba(240,240,240,0), #626262);
+    margin-left: 1vh;
+  }
+
+  h2 {
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    line-height: 1.2em;
+    text-transform: uppercase;
+  }
+}
+
+.info {
+  max-width: 640px;
+  margin: auto;
+  padding: 0 1em;
+  p {
+    font-size: 1.5em;
+  }
+}
